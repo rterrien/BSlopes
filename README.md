@@ -33,7 +33,7 @@ The tool contains the following Python scripts:
     - magnetic_field_input.txt: a list of B (in G) for the simulation
     - temperature_input.txt: a list of T (in K) and the corresponding MARCS atmosphere file names that were added in step 4
     - VALD_input.txt: the output of a VALD query using the long format
-```run python simulate.py``` in the copy of the syn1 directory
+6. Run ```python simulate.py``` in the copy of the syn1 directory
 
 ## Outputs:
 
