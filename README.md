@@ -37,7 +37,7 @@ The tool contains the following Python scripts:
 
 ## Outputs:
 
-The tool creates a directory called OUTPUT_/<time/>, where /<time/> is the date and time when simulate.py was run. In this OUTPUT_/<time/> directory are the following:
+The tool creates a directory called OUTPUT, followed by the date and time when simulate.py was run. In this OUTPUT directory are the following:
 
 - FINAL_TABLE.csv, containing a list of lines, their VALD parameters, their EW, FWHM, ad depth values at various T and B, and their T and B sensitivities
 - A Figures directory, the varying T and B line profiles for all lines, the line fits of EW, FWHM, and Depth vs T and B for all lines, and scatter plots of all EW, FWHM, and Depth sensitivities vs the Landé Factor. 
