@@ -23,7 +23,7 @@ data = pd.read_csv(sys.argv[2], delimiter="#", header=None)
 #Clean the columns
 data2 = data.iloc[::4, :]
 data2.columns = ['Element', 'Ionization', 'Wavelength (Air, Å)', 'log gf', 'E low (eV)', 'J low', 'E up (eV)', 'J up', 'Lande lower', 'Lande upper', 'Lande mean', 'Radiative', 'Stark', 'Waals', 'Depth', 'Lower term']
-data2[['Element', 'Ionization']] = data2['Ionization'].str.split(' ', 1, expand=True)
+data2[['Element', 'Ionization']] = data2['Ionization'].str.split(' ', n=1, expand=True)
 sources = data2['Lower term']
 sources_stripped = []
 for i in sources:
