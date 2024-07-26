@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm     as cm
 from PyAstronomy import pyasl
-import hpfspec2
+#import hpfspec2
 import sys
 from scipy import stats
 from matplotlib.ticker import FormatStrFormatter 

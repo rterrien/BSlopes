@@ -11,7 +11,10 @@ import subprocess
 '''To run the following script, run "python VALD_to_NICOLE.py <Slopes> <VALD outputs>", where <Slopes> is a textfile listing the slopes of every line and <VALD outputs> lists the VALD output parameters used for every line.'''
 
 #Read the textfile containing the slopes
-df=pd.read_csv(sys.argv[1], sep=' ', error_bad_lines=False)
+#df=pd.read_csv(sys.argv[1], sep=' ', error_bad_lines=False)
+#RCT 2024-7-26 replacing above line since error_bad_lines is deprecated, per
+#https://stackoverflow.com/questions/69513799/pandas-read-csv-the-error-bad-lines-argument-has-been-deprecated-and-will-be-re
+df=pd.read_csv(sys.argv[1], sep=' ', on_bad_lines='skip')
 df = df.loc[:,~df.columns.str.match("Unnamed")]
 
 #Read the textfile containing VALD outputs
