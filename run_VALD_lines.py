@@ -84,15 +84,19 @@ for k in range(0, len(species)):
             if (len(words) >= 3 and words[0] == "Input" and words[1] == "model="):
                 input_model_name = model_file
                 new_NICOLE_lines.append("Input model= " + str(model_file) + "\n")
-            elif (len(words) >= 3 and words[0] == "First" and words[1] == "wavelength="):
+            elif (len(words) > 0) and (words[0] == "First"): # RCT 20240727 this fails if there is not space before the equals sign, as is the case in the NICOLE.input file distributed in the current NICOLE repo. Just use "first" to identify starting wavelength for now.
                 first_lambda = str(float(central_wavelength) - 2)
                 new_NICOLE_lines.append("  First wavelength= " + str(first_lambda) + "\n")
-            elif (len(words) >= 3 and words[0] == "Wavelength" and words[1] == "step="):
-                lambda_step = words[2]
-                new_NICOLE_lines.append(line)
-            elif (len(words) >= 4 and words[0] == "Number" and words[1] == "of" and words[2] == "wavelengths="):
-                num_lambda = words[3]
-                new_NICOLE_lines.append(line)
+            elif (len(words) >= 2 and words[0] == "Wavelength" and words[1] == "step="):
+                #lambda_step = words[2] # RCT 20240727 this is hard-coded as 2 in the line_fitting.py script line 37
+                lambda_step = '2'
+                newline = '  Wavelength step= 2 mA \n'
+                new_NICOLE_lines.append(newline)
+            elif (len(words) >= 3 and words[0] == "Number" and words[1] == "of" and words[2] == "wavelengths="):
+                #num_lambda = words[3] # RCT 20240727 this is hard-coded as 2000 in the line_fitting.py script line 38
+                num_lambda = '2000'
+                newline = '  Number of wavelengths= 2000 \n'
+                new_NICOLE_lines.append(newline)
             elif (len(words) >= 2 and words[0][0:5] == "Line="):
                 new_NICOLE_lines.append("Line=" + str(element) + " " + str(central_wavelength) + "\n")
             else:
@@ -128,15 +132,19 @@ for k in range(0, len(species)):
             if (len(words) >= 3 and words[0] == "Input" and words[1] == "model="):
                 input_model_name = model_file
                 new_NICOLE_lines.append("Input model= " + str(model_file) + "\n")
-            elif (len(words) >= 3 and words[0] == "First" and words[1] == "wavelength="):
+            elif (len(words) > 0) and (words[0] == "First"): # RCT 20240727 this fails if there is not space before the equals sign, as is the case in the NICOLE.input file distributed in the current NICOLE repo. Just use "first" to identify starting wavelength for now.
                 first_lambda = str(float(central_wavelength) - 2)
                 new_NICOLE_lines.append("  First wavelength= " + str(first_lambda) + "\n")
-            elif (len(words) >= 3 and words[0] == "Wavelength" and words[1] == "step="):
-                lambda_step = words[2]
-                new_NICOLE_lines.append(line)
-            elif (len(words) >= 4 and words[0] == "Number" and words[1] == "of" and words[2] == "wavelengths="):
-                num_lambda = words[3]
-                new_NICOLE_lines.append(line)
+            elif (len(words) >= 2 and words[0] == "Wavelength" and words[1] == "step="):
+                #lambda_step = words[2] # RCT 20240727 this is hard-coded as 2 in the line_fitting.py script line 37
+                lambda_step = '2'
+                newline = '  Wavelength step= 2 mA \n'
+                new_NICOLE_lines.append(newline)
+            elif (len(words) >= 3 and words[0] == "Number" and words[1] == "of" and words[2] == "wavelengths="):
+                #num_lambda = words[3] # RCT 20240727 this is hard-coded as 2000 in the line_fitting.py script line 38
+                num_lambda = '2000'
+                newline = '  Number of wavelengths= 2000 \n'
+                new_NICOLE_lines.append(newline)
             elif (len(words) >= 2 and words[0][0:5] == "Line="):
                 new_NICOLE_lines.append("Line=" + str(element) + " " + str(central_wavelength) + "\n")
             else:
