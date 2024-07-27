@@ -46,7 +46,7 @@ def plot_all_mf(element, central_wavelength):
         ws, ints = get_wavelength_intensity_mf(i)
         plt.plot(ws, ints, label = str(mfs[i]) + " G", color = colormap[i], linewidth = 4)
     sm = plt.cm.ScalarMappable(cmap="plasma", norm=plt.Normalize(vmin=min(mfs), vmax=max(mfs)))
-    cbar = plt.colorbar(sm)
+    cbar = plt.colorbar(sm,ax=plt.gca())
     cbar.set_label('Magnetic Field Strength (G)', size = 20)
     cbar.ax.tick_params(labelsize=14)
     #Fit delta lambda such that at 3700 angstroms, the offset is 0.2 angstroms and at 15000 ansgtroms, the offset is 2 angstroms
@@ -71,7 +71,7 @@ def plot_all_temp(element, central_wavelength):
         ws, ints = get_wavelength_intensity_temp(i)
         plt.plot(ws, ints, label = "T = " + str(int(i)) + " K", color = colormap[i], linewidth = 4)
     sm = plt.cm.ScalarMappable(cmap="plasma", norm=plt.Normalize(vmin=min(temps), vmax=max(temps)))
-    cbar = plt.colorbar(sm)
+    cbar = plt.colorbar(sm,ax=plt.gca())
     cbar.set_label('Temperature (K)', size = 20)
     cbar.ax.tick_params(labelsize=14) 
 
