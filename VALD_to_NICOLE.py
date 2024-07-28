@@ -84,7 +84,7 @@ line3s = []
 line4s = []
 
 #Iteratively read each line of the VALD output and extract the relevant parameters of each line
-for k in range(3, NUM_LINES*4+4): 
+for k in range(3, NUM_LINES*4+3): 
 
     line = VALD_lines[k]
     words = line.split()
