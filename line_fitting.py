@@ -432,6 +432,9 @@ for k in FULL_RANGE:
             file_object.write(str(fwhm) + " ")
             file_object.write(str(line_depth) + " ")
         
+        ew_temp = np.array(ew_temp)
+        fwhm_tmp = np.array(fwhm_temp)
+
         ew_mf = []
         fwhm_mf = []
         depth_mf = []
